@@ -6,7 +6,38 @@ int main(void)
 {
     int choice;
     do {
+        printf("\nMenu:\n");
+        printf("1. Calculer la factorielle d'un entier positif\n");
+        printf("2. Elever un entier a une puissance donnee\n");
+        printf("3. Permuter deux entiers\n");
+        printf("4. Verifier si un entier est premier\n");
+        printf("5. Resoudre une equation du second degre\n");
+        printf("6. Calculer la distance entre deux points\n");
+        printf("7. Array\n");
+        printf("0. Quitter\n");
+        printf("Entrez votre choix: ");
+        scanf("%d", &choice);
+
         switch (choice) {
+        case 1: {
+            unsigned int value;
+            printf("Entrez un entier positif pour calculer sa factorielle : ");
+            scanf("%u", &value);
+            printf("Factorielle de %u est %u\n", value, fact(value));
+            break;
+        }
+
+        case 2: {
+            int value;
+            unsigned int pow;
+            printf("Entrez un entier et une puissance :\n");
+            printf("Entier : ");
+            scanf("%d", &value);
+            printf("Puissance : ");
+            scanf("%u", &pow);
+            printf("%d eleve a la puissance %u est %d\n", value, pow, power(value, pow));
+            break;
+        }
 
         case 3: {
             int a, b;
@@ -25,7 +56,7 @@ int main(void)
             int n;
             printf("Entrez un entier : ");
             scanf("%d", &n);
-            isPrimeNumber(n);
+            estPremier(n) ? printf("%d est un nombre premier.\n", n) : printf("%d n'est pas un nombre premier.\n", n);
             break;
         }
 
@@ -38,7 +69,7 @@ int main(void)
             scanf("%lf", &b);
             printf("Entrez c : ");
             scanf("%lf", &c);
-            solverEquation(a, b, c);
+            equationSecondDegre(a, b, c);
             break;
         }
         case 6: {
@@ -62,9 +93,13 @@ int main(void)
 
             break;
         }
+        case 7:
+            arrayPrint();
+            break;
         default :
             break;
         }
     } while (choice != 0);
 
+    return 0;
 }

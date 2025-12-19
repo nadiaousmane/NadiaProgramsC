@@ -32,7 +32,6 @@ void permutation(int *a, int *b) {
     *a = *b;
     *b = temp;
 
-    printf("a = %d, b = %d", *a, *b);
     return;
 }
 
@@ -82,10 +81,25 @@ int estPremier(int n) {
 
 // Fonction qui calcule la distance entre deux points
 double distancePoint(Point p1, Point p2) {
-    return sqrt((p2.x - p1.x) * (p2.x - p1.x) +
-                (p2.y - p1.y) * (p2.y - p1.y));
+    double dx = p2.x - p1.x;
+    double dy = p2.y - p1.y;
+    return sqrt(dx * dx + dy * dy);
 }
 
+#define ARRAY_SIZE 5 
+void arrayPrint() { 
+int array[ ARRAY_SIZE ]; 
+array[0] = 1; 
+array[1] = 2; 
+array[2] = 4; 
+array[3] = 8; 
+array[4] = 16; 
+
+int i;
+for( i=0; i<ARRAY_SIZE; i++ ) { 
+printf( "array[%d] == %d\n", i, array[i] ); 
+} 
+} 
 
 
 
